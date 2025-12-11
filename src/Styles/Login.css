@@ -1,0 +1,36 @@
+.login {
+  width: 350px;
+  margin: 80px auto;
+  padding: 25px;
+  border: 1px solid lightgray;
+  border-radius: 6px;
+  text-align: center;
+  background: whitesmoke;
+}
+
+.login h1 {
+  margin-bottom: 20px;
+  font-size: 26px;
+}
+
+.login form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.login input {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.login button {
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+  border-radius: 5px;
+  background: blue;
+  color: white;
+}

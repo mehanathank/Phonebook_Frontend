@@ -1,0 +1,44 @@
+.add-contact {
+  width: 380px;
+  margin: 50px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid lightgray;
+}
+
+.add-contact h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: black;
+}
+
+.add-contact form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-contact input,
+.add-contact select {
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid gray;
+  border-radius: 6px;
+  font-size: 15px;
+  background: whitesmoke;
+  color: black;
+}
+
+.add-contact button {
+  padding: 12px;
+  font-size: 16px;
+  background-color: steelblue;
+  color: white;
+  border: none;
+  border-radius: 6px;
+}
+
+.add-contact button:hover {
+  background-color: royalblue;
+}

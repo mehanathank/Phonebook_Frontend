@@ -1,23 +1,30 @@
-import logo from './logo.svg';
+
+import{Outlet} from "react-router-dom"
 import './App.css';
+import Header from './Components/Header';
+import { useEffect, useState } from "react";
 
 function App() {
+  let [data ,setData]=useState([]);
+
+  useEffect( ()=>{
+    const fecthPhoneData=async()=>{
+      try{
+        const response=await fetch("/Phone.json");
+        const da=await response.json();
+        setData(da); 
+      }catch(err){}
+    };
+    fecthPhoneData();
+  },[]);
+  console.log(data);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header></Header>
+      <Outlet
+      context={{
+        data
+        }}></Outlet>
     </div>
   );
 }

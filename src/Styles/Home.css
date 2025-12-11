@@ -1,0 +1,20 @@
+.home {
+    padding: 20px;
+    text-align: center;
+}
+
+.home h1 {
+    margin-bottom: 20px;
+}
+
+.contact-summary h2 {
+    margin: 20px 0;
+}
+
+.view-contacts-btn {
+    background: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
