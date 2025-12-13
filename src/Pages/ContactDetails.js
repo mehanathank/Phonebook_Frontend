@@ -19,9 +19,14 @@ const ContactDetails = () => {
 
   return (
     <div className="contact-details">
-      <button onClick={() => navigate('/contacts')} className="back-btn">
-        ← Back to Contacts
-      </button>
+      <div className="action-buttons">
+        <button onClick={() => navigate('/contacts')} className="back-btn">
+          ← Back to Contacts
+        </button>
+        <button onClick={() => navigate(`/edit/${contact.id}`)} className="edit-btn">
+          Edit Contact
+        </button>
+      </div>
       
       <div className="contact-profile">
         <img 
@@ -38,12 +43,7 @@ const ContactDetails = () => {
           <div className="info-item">
             <strong>Email:</strong> {contact.email}
           </div>
-          <div className="info-item">
-            <strong>Category:</strong> 
-            {contact.category === 'friends' && '👥 Friends'}
-            {contact.category === 'business' && '💼 Business'}
-            {contact.category === 'favorites' && '⭐ Favorites'}
-          </div>
+          
           <div className="info-item">
             <strong>Added:</strong> {contact.createdAt}
           </div>

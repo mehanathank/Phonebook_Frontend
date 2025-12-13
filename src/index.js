@@ -13,7 +13,10 @@ import ContactDetails from './Pages/ContactDetails';
 import Trash from './Pages/Trash';
 
 
-const routerVariables =createBrowserRouter([{
+const routerVariables =createBrowserRouter([
+  
+  {
+
   path:"/",
   element:<App/>,
   children:[

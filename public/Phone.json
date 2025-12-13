@@ -3,16 +3,16 @@
     {
       "id": "u1",
       "name": "Meha Nathan",
-      "email": "meha@example.com",
+      "email": "meha@gmail.com",
       "password": "12345",
       "profilePic": "Images/phone.png"
     },
     {
       "id": "u2",
       "name": "Arun Kumar",
-      "email": "arun@example.com",
+      "email": "arun@gmail.com",
       "password": "arun123",
-      "profilePic": "Images/phone.png"
+      "profilePic": "Images/fahath.png"
     }
   ],
 
@@ -51,7 +51,7 @@
       "favorite": true,
       "trash": false,
       "createdAt": "2025-01-05",
-      "profilePic": "Images/phone.png"
+      "profilePic": "Images/karan.png"
     },
     {
       "id": "4",
@@ -63,7 +63,7 @@
       "favorite": false,
       "trash": false,
       "createdAt": "2025-01-10",
-      "profilePic": "Images/phone.png"
+      "profilePic": "Images/lali.png"
     },
     {
       "id": "5",
@@ -88,19 +88,8 @@
       "trash": false,
       "createdAt": "2025-01-15",
       "profilePic": "Images/snehareddy.png"
-    },
-    {
-      "id": "7",
-      "userId": "u1",
-      "name": "fahath",
-      "phone": "9445566778",
-      "email": "fahath@friends.com",
-      "category": "friends",
-      "favorite": true,
-      "trash": false,
-      "createdAt": "2025-01-15",
-      "profilePic": "Images/fahath.png"
     }
+    
   ],
 
   "categories": [

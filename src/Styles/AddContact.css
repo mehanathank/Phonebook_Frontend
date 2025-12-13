@@ -1,17 +1,12 @@
 .add-contact {
-  width: 380px;
-  margin: 50px auto;
-  padding: 25px;
-  background: white;
-  border-radius: 8px;
-  border: 1px solid lightgray;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
 }
 
 .add-contact h1 {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 24px;
-  color: black;
 }
 
 .add-contact form {
@@ -19,26 +14,30 @@
   flex-direction: column;
 }
 
-.add-contact input,
-.add-contact select {
-  padding: 12px;
-  margin-bottom: 15px;
+.add-contact label {
+  margin-bottom: 5px;
+}
+
+.add-contact input{
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
   border: 1px solid gray;
-  border-radius: 6px;
-  font-size: 15px;
-  background: whitesmoke;
-  color: black;
+  box-sizing: border-box;
+}
+.add-contact select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+  border: 1px solid gray;
+  box-sizing: border-box;
 }
 
 .add-contact button {
+  width: 100%;
   padding: 12px;
-  font-size: 16px;
-  background-color: steelblue;
+  background-color: blue;
   color: white;
   border: none;
-  border-radius: 6px;
 }
 
-.add-contact button:hover {
-  background-color: royalblue;
-}
