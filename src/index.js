@@ -11,6 +11,8 @@ import Addcontract from './Pages/AddContact';
 import ListContacts from './Pages/ListContacts';
 import ContactDetails from './Pages/ContactDetails';
 import Trash from './Pages/Trash';
+import About from './Pages/About';
+import SignUp from './Pages/SignUp';
 
 
 const routerVariables =createBrowserRouter([
@@ -22,11 +24,11 @@ const routerVariables =createBrowserRouter([
   children:[
     {
       path:"/",
-      element:<Login></Login>
+      element:<Home></Home>
     },
     {
-      path:"/home",
-      element:<Home></Home>
+      path:"/login",
+      element:<Login></Login>
     },
     {
       path:"/edit",
@@ -60,6 +62,14 @@ const routerVariables =createBrowserRouter([
     {
       path:"/trash",
       element:<Trash></Trash>
+    },
+    {
+      path:"/about",
+      element:<About></About>
+    },
+    {
+      path:"/signup",
+      element:<SignUp></SignUp>
     }
   ],
 },

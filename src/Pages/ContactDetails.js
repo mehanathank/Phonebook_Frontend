@@ -3,7 +3,7 @@ import '../Styles/ContactDetails.css';
 
 const ContactDetails = () => {
   const { id } = useParams();
-  const { data } = useOutletContext();
+  const { data, moveToTrash } = useOutletContext();
   const navigate = useNavigate();
   
   const contact = data?.contacts?.find(c => c.id === id);
@@ -25,6 +25,15 @@ const ContactDetails = () => {
         </button>
         <button onClick={() => navigate(`/edit/${contact.id}`)} className="edit-btn">
           Edit Contact
+        </button>
+        <button 
+          onClick={() => {
+            moveToTrash(contact.id);
+            navigate('/contacts');
+          }} 
+          className="delete-btn"
+        >
+          Delete Contact
         </button>
       </div>
       

@@ -17,13 +17,34 @@ function App() {
     };
     fecthPhoneData();
   },[]);
+
+  const moveToTrash = (contactId) => {
+    setData(prevData => ({
+      ...prevData,
+      contacts: prevData.contacts.map(contact => 
+        contact.id === contactId ? { ...contact, trash: true } : contact
+      )
+    }));
+  };
+
+  const restoreFromTrash = (contactId) => {
+    setData(prevData => ({
+      ...prevData,
+      contacts: prevData.contacts.map(contact => 
+        contact.id === contactId ? { ...contact, trash: false } : contact
+      )
+    }));
+  };
+
   console.log(data);
   return (
     <div className="App">
       <Header></Header>
       <Outlet
       context={{
-        data
+        data,
+        moveToTrash,
+        restoreFromTrash
         }}></Outlet>
     </div>
   );

@@ -1,4 +1,4 @@
-.login {
+.signup {
   width: 400px;
   margin: 50px auto;
   padding: 30px;
@@ -8,62 +8,68 @@
   background: whitesmoke;
 }
 
-.login h1 {
+.signup h1 {
   margin-bottom: 25px;
   font-size: 28px;
   color: #333;
 }
 
-.login form {
+.signup form {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.login label {
+.signup label {
   text-align: left;
   font-weight: bold;
   color: #555;
 }
 
-.login input {
+.signup input {
   padding: 12px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.login button {
+.signup button {
   padding: 12px;
   font-size: 18px;
   border: none;
   border-radius: 5px;
-  background: blue;
+  background: #28a745;
   color: white;
   cursor: pointer;
   margin-top: 10px;
 }
 
-.login button:hover {
-  background: darkblue;
+.signup button:hover {
+  background: #218838;
 }
 
-.signup-link {
+.error {
+  color: red;
+  font-size: 12px;
+  text-align: left;
+}
+
+.login-link {
   margin-top: 20px;
   text-align: center;
 }
 
-.signup-link p {
+.login-link p {
   color: #666;
   font-size: 14px;
 }
 
-.signup-text {
+.login-text {
   color: blue;
   cursor: pointer;
   text-decoration: underline;
 }
 
-.signup-text:hover {
+.login-text:hover {
   color: darkblue;
 }

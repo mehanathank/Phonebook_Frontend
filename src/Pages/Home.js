@@ -8,16 +8,43 @@ const Home = () => {
 
   return (
     <div className="home">
-      <h1>Contact Manager</h1>
-      <div className="contact-summary">
-        <h2>Total Contacts: {contacts.length}</h2>
-        <div className="button-container">
-          <button className="view-contacts-btn" onClick={() => navigate("/contacts")}>
-            View All Contacts
-          </button>
-          <button className="add-contact-btn" onClick={() => navigate("/add")}>
-            Add Contact
-          </button>
+      {/* Hero Section */}
+      <div className="hero-section">
+        <img src="/images/banner.jpg" alt="Contact Manager" className="hero-image" />
+        <div className="hero-content">
+          <h1>Smart Contact Management</h1>
+          <p>Organize, connect, and grow your network effortlessly</p>
+          <div className="hero-buttons">
+            <button className="cta-button" onClick={() => navigate("/login", { state: { from: "/contacts" } })}>
+              Explore Contacts
+            </button>
+            <button className="about-button" onClick={() => navigate("/about")}>
+              About Us
+            </button>
+          </div>
+        </div>
+      </div>
+
+      
+
+      <div className="categories-section">
+        <h2>Manage Your Contacts</h2>
+        <div className="categories-grid">
+          <div className="category-card" onClick={() => navigate("/login", { state: { from: "/contacts" } })}>
+            <img src="/images/all contact.png" alt="All Contacts" />
+            <h3>All Contacts</h3>
+            <p>{contacts.filter(c => !c.trash).length} contacts</p>
+          </div>
+          <div className="category-card" onClick={() => navigate("/login", { state: { from: "/add" } })}>
+            <img src="/images/add-contact.jpg" alt="Add Contact" />
+            <h3>Add New</h3>
+            <p>Create contact</p>
+          </div>
+          <div className="category-card" onClick={() => navigate("/login", { state: { from: "/trash" } })}>
+            <img src="/images/trash.jpg" alt="Trash" />
+            <h3>Trash</h3>
+            <p>{contacts.filter(c => c.trash).length} deleted</p>
+          </div>
         </div>
       </div>
     </div>

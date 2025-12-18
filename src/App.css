@@ -1,29 +1,27 @@
-
 .header{
   display:flex;
   border-bottom:1px solid black;
   padding:10px 30px;
   justify-content:space-between;
-  align-items:center;
-  background-color:black;
+  align-items:right;
 }
 .header img{
   width: 200px;
   height: 80px;
-  
 }
 .links{
   display:flex;
   justify-content:space-between;
   align-items: center;
-  width:40%
+  width:30%
 }
 
 .links a{
   text-decoration: none;
-  color:blue;
+  color:black;
   font-size:24px;
   font-size: 700;
+  margin-right:20px;
 }
 .links .active{
   color:pink;

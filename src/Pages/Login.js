@@ -1,18 +1,20 @@
 import "../Styles/Login.css";
 import { useForm } from 'react-hook-form';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Login = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
   } = useForm();
   
   const navigate = useNavigate();
+  const location = useLocation();
   const [users, setUsers] = useState([]);
   const [error, setError] = useState("");
+  
+  const from = location.state?.from || "/contacts";
 
   useEffect(() => {
     fetch('/Phone.json')
@@ -26,7 +28,7 @@ const Login = () => {
 
     if (user) {
       localStorage.setItem("auth", true);
-      navigate("/home");
+      navigate(from);
     } else {
       setError("Invalid email or password");
     }
@@ -45,6 +47,10 @@ const Login = () => {
         
         <button type="submit">Login</button>
       </form>
+      
+      <div className="signup-link">
+        <p>Don't have an account? <span onClick={() => navigate('/signup')} className="signup-text">Sign Up</span></p>
+      </div>
     </div>
   );
 };

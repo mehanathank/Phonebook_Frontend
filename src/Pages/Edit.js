@@ -18,6 +18,13 @@ const Edit = () => {
         formState: { errors },
     } = useForm();
 
+    const populateForm = (contactData) => {
+        setValue('name', contactData.name);
+        setValue('phone', contactData.phone);
+        setValue('email', contactData.email);
+        setValue('category', contactData.category);
+    };
+
     useEffect(() => {
         fetch('/Phone.json')
             .then(response => response.json())
@@ -36,14 +43,7 @@ const Edit = () => {
                 console.error('Error fetching contact:', error);
                 setLoading(false);
             });
-    }, [editid, setValue]);
-
-    const populateForm = (contactData) => {
-        setValue('name', contactData.name);
-        setValue('phone', contactData.phone);
-        setValue('email', contactData.email);
-        setValue('category', contactData.category);
-    };
+    }, [editid, setValue, populateForm]);
 
     const handleContactClick = (contactData) => {
         setSelectedContactId(contactData.id);
@@ -74,7 +74,7 @@ const Edit = () => {
                             className={`contact-item ${selectedContactId === c.id ? 'selected' : ''}`}
                         >
                             <img 
-                                src={c.profilePic} 
+                                src={`/${c.profilePic}`} 
                                 alt={c.name}
                                 className="contact-avatar"
                             />

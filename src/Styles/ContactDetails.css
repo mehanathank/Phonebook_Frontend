@@ -26,6 +26,14 @@
   cursor: pointer;
 }
 
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
 .contact-profile {
   display: flex;
   gap: 30px;
