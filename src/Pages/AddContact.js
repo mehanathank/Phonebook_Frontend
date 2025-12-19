@@ -1,31 +1,41 @@
 import "../Styles/AddContact.css";
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
+import { api } from '../services/api';
 
 const AddContact = () => {
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { },
   } = useForm({
     defaultValues: {
-      id: "9",
+      id: Date.now().toString(),
       userId: "u1",
-      name: "John Doe",
-      phone: "9876543210",
-      email: "john@example.com",
+      name: "",
+      phone: "",
+      email: "",
       category: "friends",
-      date: "2025-01-20"
+      date: new Date().toISOString().split('T')[0]
     }
   });
 
-  const onSubmitHandler = (fdata) => {
-    console.log({
-      ...fdata,
-      favorite: false,
-      trash: false,
-      createdAt: fdata.date,
-      profilePic: "Images/phone.png"
-    });
+  const onSubmitHandler = async (fdata) => {
+    try {
+      const newContact = {
+        ...fdata,
+        favorite: false,
+        trash: false,
+        createdAt: fdata.date,
+        profilePic: "Images/phone.png"
+      };
+      await api.createContact(newContact);
+      console.log('Contact added successfully');
+      navigate('/contacts');
+    } catch (error) {
+      console.error('Error adding contact:', error);
+    }
   };
 
   return (

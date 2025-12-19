@@ -2,6 +2,7 @@ import "../Styles/SignUp.css";
 import { useForm } from 'react-hook-form';
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { api } from '../services/api';
 
 const SignUp = () => {
   const {
@@ -15,12 +16,24 @@ const SignUp = () => {
   const [success, setSuccess] = useState("");
   const password = watch("password");
 
-  const onSubmitHandler = (data) => {
-    console.log('New user:', data);
-    setSuccess("Account created successfully!");
-    setTimeout(() => {
-      navigate('/login');
-    }, 2000);
+  const onSubmitHandler = async (data) => {
+    try {
+      const newUser = {
+        id: `u${Date.now()}`,
+        name: data.name,
+        email: data.email,
+        password: data.password,
+        profilePic: "Images/phone.png"
+      };
+      await api.createUser(newUser);
+      setSuccess("Account created successfully!");
+      setTimeout(() => {
+        navigate('/login');
+      }, 2000);
+    } catch (error) {
+      console.error('Error creating user:', error);
+      setSuccess("Error creating account. Please try again.");
+    }
   };
 
   return (

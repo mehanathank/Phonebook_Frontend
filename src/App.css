@@ -4,6 +4,7 @@
   padding:10px 30px;
   justify-content:space-between;
   align-items:right;
+  background-color: black;
 }
 .header img{
   width: 200px;
@@ -18,12 +19,12 @@
 
 .links a{
   text-decoration: none;
-  color:black;
+  color:white;
   font-size:24px;
   font-size: 700;
   margin-right:20px;
 }
 .links .active{
-  color:pink;
+  color:gold;
   font-size: 30px;
 }

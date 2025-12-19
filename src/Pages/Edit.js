@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useForm } from 'react-hook-form';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { api } from '../services/api';
 import "../Styles/Edit.css";
 
 const Edit = () => {
@@ -18,17 +19,17 @@ const Edit = () => {
         formState: { errors },
     } = useForm();
 
-    const populateForm = (contactData) => {
+    const populateForm = useCallback((contactData) => {
         setValue('name', contactData.name);
         setValue('phone', contactData.phone);
         setValue('email', contactData.email);
         setValue('category', contactData.category);
-    };
+    }, [setValue]);
 
     useEffect(() => {
-        fetch('/Phone.json')
-            .then(response => response.json())
-            .then(data => {
+        const fetchContacts = async () => {
+            try {
+                const data = await api.getContacts();
                 setContacts(data.contacts);
                 if (editid) {
                     const foundContact = data.contacts.find(c => c.id === editid);
@@ -38,11 +39,12 @@ const Edit = () => {
                     }
                 }
                 setLoading(false);
-            })
-            .catch(error => {
+            } catch (error) {
                 console.error('Error fetching contact:', error);
                 setLoading(false);
-            });
+            }
+        };
+        fetchContacts();
     }, [editid, setValue, populateForm]);
 
     const handleContactClick = (contactData) => {
@@ -51,13 +53,18 @@ const Edit = () => {
         populateForm(contactData);
     };
 
-    const onSubmitHandler = (formData) => {
-        const updatedContact = {
-            ...contact,
-            ...formData
-        };
-        console.log('Updated contact:', updatedContact);
-        navigate('/contacts');
+    const onSubmitHandler = async (formData) => {
+        try {
+            const updatedContact = {
+                ...contact,
+                ...formData
+            };
+            await api.updateContact(contact._id, updatedContact);
+            console.log('Contact updated successfully');
+            navigate('/contacts');
+        } catch (error) {
+            console.error('Error updating contact:', error);
+        }
     };
 
     if (loading) return <div>Loading...</div>;

@@ -2,6 +2,7 @@
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
+  background-color: maroon;
 }
 
 .action-buttons {
@@ -11,7 +12,7 @@
 }
 
 .back-btn {
-  background: gray;
+  background: greenyellow;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -53,7 +54,7 @@
 
 .contact-info-detailed h1 {
   margin: 0 0 20px 0;
-  color: darkgray;
+  color: maroon;
   font-size: 28px;
 }
 
@@ -65,12 +66,12 @@
 .info-item strong {
   display: inline-block;
   width: 80px;
-  color: gray;
+  color: maroon;
 }
 
 .favorite-badge {
   background: gold;
-  color: darkgray;
+  color: maroon;
   padding: 8px 16px;
   border-radius: 20px;
   display: inline-block;
