@@ -1,9 +1,12 @@
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://phonebook-backend-qy0n.onrender.com/api';
 
 export const api = {
   // Users
   getUsers: async () => {
     const response = await fetch(`${API_BASE_URL}/users`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
@@ -44,6 +47,9 @@ export const api = {
   // Contacts
   getContacts: async () => {
     const response = await fetch(`${API_BASE_URL}/contacts`);
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
     return response.json();
   },
 
