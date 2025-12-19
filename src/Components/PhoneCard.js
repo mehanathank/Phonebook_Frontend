@@ -9,7 +9,7 @@ const PhoneCard = ({ item }) => {
       onClick={() => navigate(`phome/${item.info.id}`)}
     >
       <img
-        src={`/Images/${item.info.profilePic}`} 
+        src={`/${item.profilePic}`} 
         alt={item.info.name}
         style={{ width: "100px", height: "100px", borderRadius: "50%" }}
       />

@@ -10,7 +10,7 @@ const Home = () => {
     <div className="home">
       {/* Hero Section */}
       <div className="hero-section">
-        <img src="/images/banner.jpg" alt="Contact Manager" className="hero-image" />
+        <img src="/Images/banner.jpg" alt="Contact Manager" className="hero-image" />
         <div className="hero-content">
           <h1>Smart Contact Management</h1>
           <p>Organize, connect, and grow your network effortlessly</p>
@@ -31,17 +31,17 @@ const Home = () => {
         <h2>Manage Your Contacts</h2>
         <div className="categories-grid">
           <div className="category-card" onClick={() => navigate("/login", { state: { from: "/contacts" } })}>
-            <img src="/images/all contact.png" alt="All Contacts" />
+            <img src="/Images/all contact.png" alt="All Contacts" />
             <h3>All Contacts</h3>
             <p>{contacts.filter(c => !c.trash).length} contacts</p>
           </div>
           <div className="category-card" onClick={() => navigate("/login", { state: { from: "/add" } })}>
-            <img src="/images/add-contact.jpg" alt="Add Contact" />
+            <img src="/Images/add-contact.jpg" alt="Add Contact" />
             <h3>Add New</h3>
             <p>Create contact</p>
           </div>
           <div className="category-card" onClick={() => navigate("/login", { state: { from: "/trash" } })}>
-            <img src="/images/trash.jpg" alt="Trash" />
+            <img src="/Images/trash.jpg" alt="Trash" />
             <h3>Trash</h3>
             <p>{contacts.filter(c => c.trash).length} deleted</p>
           </div>
